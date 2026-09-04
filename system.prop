@@ -56,4 +56,3 @@ ro.sprd.nightdisplay.enhance=false
 # =======================================================
 persist.nhmonitor.enable=off
 persist.vendor.nhmonitor.enable=off
-

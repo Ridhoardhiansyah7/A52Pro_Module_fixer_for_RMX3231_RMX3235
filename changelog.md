@@ -2,6 +2,8 @@
 
 \### Fixes
 
+\- Bootloop caused by nhmonitor
+
 \- SRMI crash
 
 \- Bluetooth crash

@@ -1,7 +1,7 @@
 id=Narzo_50I
 name=C11.2021.Narzo.50I.A52Pro.port.rom.issue.fixer
-version=v1
-versionCode=1
+version=v2
+versionCode=2
 author=Aflahal
 description=Fixed Brightness,ril,etc in Blackview A52Pro port rom
 updateJson=https://raw.githubusercontent.com/Ridhoardhiansyah7/A52Pro_Module_fixer_for_RMX3231_RMX3235/master/update.json
