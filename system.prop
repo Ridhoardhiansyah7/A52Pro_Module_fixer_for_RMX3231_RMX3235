@@ -51,3 +51,9 @@ persist.vendor.audio.bt_sco.status=keep
 ro.sprd.displayenhance=false
 ro.sprd.nightdisplay.enhance=false
 
+# =======================================================
+# FIX BOOTLOOP IN 3:00 AFTER BOOT IS COMPLETED
+# =======================================================
+persist.nhmonitor.enable=off
+persist.vendor.nhmonitor.enable=off
+
