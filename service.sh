@@ -1,5 +1,6 @@
 #!/system/bin/sh
 
+# wait untuke boot is completed
 while [ "$(getprop sys.boot_completed)" != "1" ]; do 
     sleep 2
 done
@@ -10,13 +11,19 @@ ln -s /dev/spipe_lte7 /dev/spipe_lte15
 chmod 0660 /dev/spipe_lte15
 chown radio:radio /dev/spipe_lte15
 
-# fix brightness
+# fix bootloop in 3:00 after restart
+if [ "$(getprop persist.nhmonitor.enable)" = "on" ]; then
+    setprop persist.nhmonitor.enable off
+fi    
+
+# brightness node
 NODE_BRIGHTNESS="/sys/class/backlight/sprd_backlight/brightness"
 NODE_MAX_BRIGHTNESS="/sys/class/backlight/sprd_backlight/max_brightness"
 
-# match stock
+# match max brightness same as stock
 echo 4095 > "$NODE_MAX_BRIGHTNESS"
 
+# fix brightness
 while true; do
     if [ -f "$NODE_BRIGHTNESS" ]; then
 
