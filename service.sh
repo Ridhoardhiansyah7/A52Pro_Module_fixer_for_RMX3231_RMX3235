@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# wait untuke boot is completed
+# wait until boot is completed
 while [ "$(getprop sys.boot_completed)" != "1" ]; do 
     sleep 2
 done
@@ -12,9 +12,10 @@ chmod 0660 /dev/spipe_lte15
 chown radio:radio /dev/spipe_lte15
 
 # fix bootloop in 3:00 after restart
-if [ "$(getprop persist.nhmonitor.enable)" = "on" ]; then
+while [ "$(getprop persist.nhmonitor.enable)" = "on" ]; do
     setprop persist.nhmonitor.enable off
-fi    
+    sleep 1
+done
 
 # brightness node
 NODE_BRIGHTNESS="/sys/class/backlight/sprd_backlight/brightness"
